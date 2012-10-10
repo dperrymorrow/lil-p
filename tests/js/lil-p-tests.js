@@ -69,7 +69,6 @@ test("testing time ago from a starting point", 2, function () {
   }, 1000);
 });
 
-
 // testing string extensions
 test("truncates properly", function () {
   equal('Hey there im a really long string'.truncate(5), 'Hey t...');
@@ -103,4 +102,11 @@ test("expect foobar not to contain donkey", function () {
   equal( "foobar".contains('donkey'), false );
 });
 
+test("splits on characters correctly", function () {
+  equal("hello there-somethingerather".wordWrap(), "hello <wbr>there-<wbr>somethingerather");
+});
+
+test("adds in wraps if past length param", function () {
+  equal("123456789".wordWrap(5), "12345<wbr>6789");
+});
 
