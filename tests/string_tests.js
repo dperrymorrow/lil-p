@@ -17,16 +17,32 @@ test("truncates properly to defaults and trims", function () {
 test("expect foobar to conain foo", function () {
   equal("foobar".contains('foo'), true);
 });
-
+//testing escape
+test("strips the html characters", function () {
+  equal("foobar<a href='foo'>bar</a>".safe(), "foobar&lt;a href='foo'&gt;bar&lt;/a&gt;");
+});
 // testing contains
 test("expect foobar not to contain donkey", function () {
   equal("foobar".contains('donkey'), false);
 });
-
-test("pluralize with a value", function () {
-  equal('dog'.pluralize(2), 'dogs');
+// humanize
+test("humanize camelcase", function () {
+  equal('monkeyPants'.humanize(), 'monkey pants');
 });
 
+test("humanize underscore", function () {
+  equal('monkey_Pants'.humanize(), 'monkey pants');
+});
+
+test("humanize dashes", function () {
+  equal('monkey-Pants'.humanize(), 'monkey pants');
+});
+
+// concat
+test("concat with availible variables", function () {
+  var obj = {foo: " love cats"};
+  equal("dogs#{foo}".inject(obj), 'dogs love cats');
+});
 // pluralize
 test("pluralize with noting passed", function () {
   equal('dog'.pluralize(), 'dog');
