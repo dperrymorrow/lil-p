@@ -45,7 +45,7 @@ test("concat with availible variables", function () {
 });
 // pluralize
 test("pluralize with noting passed", function () {
-  equal('dog'.pluralize(), 'dog');
+  equal('dog'.pluralize(), 'dogs');
 });
 // singularize
 test("singularize", function () {
