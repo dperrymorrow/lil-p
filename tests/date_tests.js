@@ -56,14 +56,14 @@ test("2 years ago", function () {
   equal(new Date().distanceInWords(stamp), '2 years ago');
 });
 
-test("testing time ago from a starting point", 2, function () {
-  var stamp = new Date().setTimeAgo('2 minutes'),
-    startingPoint = new Date().setTimeAgo('50 seconds');
+test("time ago", function () {
+  var stamp = new Date("March 11, 1985 09:25:00 GMT-0800 (PST)");
+  stamp.setTimeAgo('6 weeks');
+  equal(stamp, 'Mon Jan 28 1985 09:25:00 GMT-0800 (PST)');
+});
 
-  equal(startingPoint.distanceInWords(stamp), '1 minute, 10 seconds ago');
-  stop();
-  setTimeout(function () {
-    equal(startingPoint.distanceInWords(stamp), '1 minute, 10 seconds ago');
-    start();
-  }, 1000);
+test("distance in words from 2 independant date objects", function () {
+  var start = new Date("March 11, 1985 09:25:00 GMT-0800 (PST)");
+  var stop  = new Date("July 30, 1999 10:50:00 GMT-0800 (PST)");
+  equal(stop.distanceInWords(start), '14 years, 5 months ago');
 });

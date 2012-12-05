@@ -4,7 +4,7 @@ LIL-p
 #Javascript Prototype Extensions
 Add on functions to native ojects in Javascript. See the tests directory for examples of use
 
-##String extensions
+##String Object Extensions
 
 ###truncate(charLimit:Number, ext:String);
 Truncates a string to the charLimit number, and then appends the ext if needed. Defaults to 10 and ... if params are ommited.
@@ -63,8 +63,11 @@ var obj = {victim: "cat"};
 Converts a string to plural if the number passed is greater than 1. If nothing passed, converts to plural.
 
 ````javascript
-'dog'.pluralize();
+'dog'.pluralize(3);
 // returns => 'dogs'
+
+'dog'.pluralize(1);
+// returns => 'dog'
 ````
 
 ###singularize();
@@ -85,4 +88,24 @@ Defaults to 25 and ["/", "-", " "]
 
 "123456789".wordWrap(5);
 //returns => "12345<wbr>6789"
+````
+
+##Date Object Extensions
+
+###setTimeAgo(distance:String);
+Takes a date object and sets it back in time to human readable string such as "2 weeks", "3 minutes", "5 years", or "30 seconds"
+````javascript
+var stamp = new Date("March 11, 1985 09:25:00 GMT-0800 (PST)");
+stamp.setTimeAgo('6 weeks');
+// returns => 'Mon Jan 28 1985 09:25:00 GMT-0800 (PST)'
+````
+
+###distanceInWords(dateObject:Date, suffix:String);
+Returns a string of the distance in words from one Date object to another. Suffix defaults to "ago".
+
+````javascript
+var start = new Date("March 11, 1985 09:25:00 GMT-0800 (PST)");
+var stop  = new Date("July 30, 1999 10:50:00 GMT-0800 (PST)");
+stop.distanceInWords(start);
+// returns => '14 years, 5 months ago';
 ````
