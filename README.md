@@ -1,8 +1,6 @@
-LIL-p
-=====
-
-#Javascript Prototype Extensions
-Add on functions to native ojects in Javascript. See the tests directory for examples of use
+#lil-p (Javascript Prototype Extensions)
+Add on functions to native ojects in Javascript. See the tests directory for examples of use. 
+The fastest way to get started is to include the (minified version)[https://raw.github.com/dperrymorrow/lil-p/master/lib/lil_p.min.js].
 
 ##String Object Extensions
 
