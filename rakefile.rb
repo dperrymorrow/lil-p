@@ -29,6 +29,7 @@ namespace :assets do
     # files must me compressed in this order
     input = 
       File.read("lib/base.js") + 
+      File.read("lib/array_ext.js") + 
       File.read("lib/object_ext.js") + 
       File.read("lib/string_ext.js") +
       File.read("lib/date_ext.js")
