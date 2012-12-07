@@ -11,12 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
-  - lib/base.js
-  - lib/string_ext.js
-  - lib/object_ext.js
-  - lib/array_ext.js
-  - lib/array_ext.js
-  - lib/date_ext.js
+  - lib/lil_p.min.js
 
 # stylesheets
 #

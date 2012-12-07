@@ -3,6 +3,13 @@ require 'jasmine'
 
 load 'jasmine/tasks/jasmine.rake'
 
+namespace :test do
+  task :compiled do
+    Rake::Task['assets:minify'].invoke
+    Rake::Task['jasmine:ci'].invoke
+  end
+end
+
 namespace :assets do
 
   task :minify do
