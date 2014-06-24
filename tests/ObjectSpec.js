@@ -11,9 +11,4 @@ describe("Object Prototype Extensions", function () {
     expect(obj.keys()).toEqual(["foo", "fruit"]);
   });
 
-  it("does not affect arrays", function () {
-    var arr = ["foo", "bar"];
-    expect(arr.keys).toEqual(undefined);
-  });
-
 });

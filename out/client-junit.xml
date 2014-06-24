@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite>
+<testcase classname="lib.array_ext" name="array_ext:10:7">
+  <failure message="Expected ';' and instead saw '}'." />
+</testcase>
+<testcase classname="lib.base" name="base:0:0"></testcase>
+<testcase classname="lib.object_ext" name="object_ext:0:0"></testcase>
+<testcase classname="lib.date_ext" name="date_ext:0:0"></testcase>
+<testcase classname="lib.string_ext" name="string_ext:35:35">
+  <failure message="Insecure '.'." />
+</testcase>
+<testcase classname="lib.string_ext" name="string_ext:40:11">
+  <failure message="Don't declare variables in a loop." />
+</testcase>
+<testcase classname="lib.string_ext" name="string_ext:41:11">
+  <failure message="Don't declare variables in a loop." />
+</testcase>
+  </testsuite>
+</testsuites>
